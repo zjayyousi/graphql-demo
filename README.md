@@ -6,6 +6,13 @@ This is a demo Spring Boot, Gradle project for GraphQL.
 ### Reference Documentation
 Application Requirements:
 * Java 8+
+* H2 In-Memory Database (Demo only, not suitable for production)
+* GraphQL Dependencies for Spring Boot with Gradle:
+```
+compile group: 'com.graphql-java', name: 'graphql-spring-boot-starter', version: '5.0.2'
+compile group: 'com.graphql-java', name: 'graphiql-spring-boot-starter', version: '5.0.2'
+compile group: 'com.graphql-java', name: 'graphql-java-tools', version: '5.2.4'
+```
 
 ### Guides
 
