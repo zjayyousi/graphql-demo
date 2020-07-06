@@ -1,0 +1,57 @@
+# `Author` Field Type
+type Author {
+    id: ID!
+    name: String
+    posts:[Post]
+}
+
+# `Post` Field Type
+type Post {
+    id: ID!
+    title: String
+    content: String
+    created: String
+    author: Author
+    comments: [Comment]
+}
+
+# `Comment` Field Type
+type Comment {
+    id: ID!
+    content: String
+    created: String
+    post: Post
+}
+
+# Root Query Type
+type Query {
+    # Get a list of `authors` and limit by `count` argument
+    authors(count: Int):[Author]
+
+    # Get `author` by `id` argument
+    author(id: ID):Author
+
+    # Get a list of all `posts`
+    posts:[Post]
+
+    # Get `post` by `id` argument
+    post(id: ID):Post
+
+    # Get a list of all `comments`
+    comments:[Comment]
+
+    # Get `comment` by `id` argument
+    comment(id: ID):Comment
+}
+
+# Mutation Type
+type Mutation {
+    # Create new author
+    createAuthor(name: String!):Author
+
+    # Create new comment
+    createComment(post_id: ID!, content:String!):Comment
+
+    # Update a comment
+    updateComment(id: ID!, content:String):Comment
+}
